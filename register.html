@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>تسجيل المشاركين — أكاديمية جَهير</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/portal.css">
+</head>
+<body data-page="register">
+<header><img src="assets/logo/jaheer.png" alt="أكاديمية جَهير"><a href="index.html">الموقع الرئيسي</a></header>
+<main>
+<h1>تسجيل المشاركين</h1>
+<p class="sub">أدخل بياناتك للتسجيل في أكاديمية جَهير.</p>
+<form id="f" novalidate>
+<label>الاسم الكامل<input name="full_name" required minlength="2" maxlength="100" autocomplete="name"></label>
+<label>البريد الإلكتروني<input name="email" type="email" required maxlength="254" autocomplete="email" dir="ltr"></label>
+<label>رقم الجوال (اختياري)<input name="phone" type="tel" maxlength="20" autocomplete="tel" dir="ltr"></label>
+<label>كلمة المرور (8 أحرف على الأقل)<input name="password" type="password" required minlength="8" maxlength="72" autocomplete="new-password"></label>
+<label class="chk"><input type="checkbox" name="consent" required><span>أوافق على حفظ بياناتي واستخدامها لأغراض التسجيل والتواصل في أكاديمية جَهير فقط.</span></label>
+<input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn" type="submit">تسجيل</button>
+</form>
+<p class="alt">سجّلت من قبل؟ <a href="my-notes.html">ملاحظاتي</a></p>
+<p id="msg" class="msg" role="status" hidden></p>
+</main>
+<script src="assets/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="assets/portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ملاحظاتي — أكاديمية جَهير</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/portal.css">
+</head>
+<body data-page="notes">
+<header><img src="assets/logo/jaheer.png" alt="أكاديمية جَهير"><a href="index.html">الموقع الرئيسي</a></header>
+<main>
+<h1>ملاحظاتي</h1>
+<p class="sub">ملاحظات لجنة التحكيم على أدائك.</p>
+<form id="login" novalidate>
+<label>البريد الإلكتروني<input name="email" type="email" required maxlength="254" autocomplete="email" dir="ltr"></label>
+<label>كلمة المرور<input name="password" type="password" required maxlength="72" autocomplete="current-password"></label>
+<button class="btn" type="submit">دخول</button></form>
+<section id="panel" hidden><div id="list"></div><p class="alt"><button class="btn o" id="out" type="button">تسجيل الخروج</button></p></section>
+<p id="msg" class="msg" role="status" hidden></p>
+</main>
+<script src="assets/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="assets/portal.js"></script>
+</body>
+</html>

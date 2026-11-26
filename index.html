@@ -7,7 +7,7 @@
 <title>أكاديمية جَهير</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bur:#6b1520;--bur2:#47101a;--ivory:#f8f2e6;--beige:#ebe0c9;--gold:#a98450;--char:#2a2422;--ink:#2b211c;--line:rgba(43,33,28,.16);
+:root{--bur:#1e0205;--bur2:#100103;--ivory:#f8f2e6;--beige:#ebe0c9;--gold:#a98450;--char:#2a2422;--ink:#2b211c;--line:rgba(43,33,28,.16);
 --head:'Amiri','Traditional Arabic',serif;--body:'Tajawal',system-ui,sans-serif;color-scheme:light;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html[lang=en]{--head:'Cormorant Garamond',Georgia,serif;--body:'Inter',system-ui,sans-serif}
@@ -45,7 +45,7 @@ html[lang=en] h2{font-size:clamp(2.2rem,6.4vw,3.4rem);line-height:1.15}
 /* hero */
 #home{padding:0}.hero{display:grid}
 .hv{position:relative;background:var(--bur);min-height:44svh;display:grid;place-items:center;overflow:hidden;order:-1}
-.hv .bg{position:absolute;inset:0}.hv.has::after{content:"";position:absolute;inset:0;background:rgba(71,16,26,.5)}
+.hv .bg{position:absolute;inset:0}.hv.has::after{content:"";position:absolute;inset:0;background:rgba(16,1,3,.5)}
 #logo{position:relative;z-index:1;width:min(320px,68%)}#logo img{width:100%;display:block}
 .hn{position:absolute;bottom:.8rem;inset-inline:1rem;text-align:center;font-size:.78rem;color:rgba(235,224,201,.75);z-index:1}
 .ht{padding:3rem 1.4rem 3.5rem;max-width:640px;margin:0 auto;width:100%}
@@ -117,6 +117,11 @@ footer .sgn{color:var(--beige);font-size:1.1rem;margin:1.2rem 0 0}
 footer .ph{color:var(--beige);border-color:rgba(235,224,201,.4);background:none;margin-bottom:.5rem;padding:.4rem 1rem;justify-items:start}
 .cp{max-width:1120px;margin:2.5rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(235,224,201,.2);font-size:.8rem;opacity:.65}
 @media(min-width:860px){.fg{grid-template-columns:1.6fr 1fr 1.2fr 1fr}}
+.sgn{container-type:inline-size}
+.sgn .bt{display:grid;grid-template-columns:1fr;text-align:center;font-size:clamp(1rem,5.6cqi,1.35rem);line-height:2.1;white-space:nowrap}
+.sgn .bt+.bt{margin-top:.8rem;padding-top:.8rem;border-top:1px solid rgba(169,132,80,.35)}
+@container (min-width:500px){.sgn .bt{grid-template-columns:1fr 1fr;gap:0 1.2rem;text-align:start;font-size:clamp(1rem,3.3cqi,1.2rem)}.sgn .bt span:last-child{text-align:end}}
+.cb{padding:3rem 1.4rem}footer .btn{background:var(--ivory);color:var(--bur);border-color:var(--ivory)}footer .btn:hover{background:var(--beige)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -126,7 +131,7 @@ footer .ph{color:var(--beige);border-color:rgba(235,224,201,.4);background:none;
 <header id="home"><div class="hero">
   <div class="ht">
     <span class="ey" id="eh"></span>
-    <h1 id="h1"></h1><p class="tg" id="tg"></p><p class="it" id="hi"></p>
+    <h1 id="h1"></h1><p class="tg" id="tg"></p>
     <div class="sgn" id="sg1" lang="ar"></div>
     <div class="cta"><a class="btn" href="#colors" id="b1"></a><a class="btn o" href="#marathon" id="b2"></a></div>
   </div>
@@ -147,19 +152,9 @@ footer .ph{color:var(--beige);border-color:rgba(235,224,201,.4);background:none;
 <section id="marathon"><div class="in fd">
   <span class="ey" id="em" style="color:var(--beige)"></span><h2 id="hm"></h2><div class="rule"></div><p class="lead" id="mi"></p>
   <h3 class="sb" id="s1"></h3><div class="pg" id="pg"></div>
-  <h3 class="sb" id="s2"></h3><div class="mg" id="mg"></div>
-  <h3 class="sb" id="s3"></h3><div class="ev"><div class="big" id="eb"></div><div class="ds" id="ed"></div></div>
 </div></section>
 
-<section id="achievements"><div class="in fd">
-  <span class="ey" id="ee"></span><h2 id="he"></h2><div class="rule"></div><p class="lead" id="ai"></p>
-  <div class="ac" id="ac"></div>
-  <div class="pr"><h3 id="hp"></h3><div class="pl" id="pl"></div></div>
-</div></section>
-
-<section id="gallery"><div class="in fd"><span class="ey" id="eg"></span><h2 id="hg"></h2><div class="rule"></div><div class="gg" id="gg"></div></div></section>
-
-<section class="cb"><div class="in fd"><h2 id="ct1"></h2><div class="rule"></div><p class="lead" id="ct2"></p><a class="btn" href="#contact" id="b3"></a></div></section>
+<section class="cb"><div class="in fd"><a class="btn" href="#contact" id="b3"></a></div></section>
 
 <footer id="contact"><div class="fg">
   <div><div id="logo2"></div><div class="sgn" id="sg2" lang="ar"></div></div>
@@ -178,53 +173,40 @@ const M={
  logo:LOGO,
  heroImage:"",                 // مثال: "assets/hero.jpg"
  aboutPhoto:"",
- colorImages:["","","","assets/colors/04.jpg"],    // "assets/colors/01.jpg" ...
- marathonGallery:Array.from({length:4},()=>({type:"image",src:""})),
- stagePhoto:"",
- partnerLogos:Array(6).fill(""),
- gallery:Array.from({length:7},()=>({type:"image",src:""})),
+ colorImages:["","assets/colors/02.jpg","",""],    // "assets/colors/01.jpg" ...
+ email:"",                    // بريد التواصل مثل "name@example.com" — يفتح منه تطبيق البريد
  social:[{ar:"لينكد إن",en:"LinkedIn",url:"https://www.linkedin.com/company/jaheer-academy/"}],  // أضف الحسابات الرسمية فقط
- accents:["#a0626b","#8a3b49","#6b1520","#47101a"]
+ accents:["#79464e", "#5b3036", "#3b181c", "#1e0205"]
 };
 /* الشعار الكتابي الرسمي — لا يُترجم ولا يُعدَّل */
-const SLOGAN=["صوتُ الخطيبِ إذا اعتلى بشجاعةٍ ذاع المعاني هيبة وحضورا","مادام للصوت الجهير مهابه","ما كان للخطباء غير جهيرا"];
+const SLOGAN=[["صوتُ الخطيب إذا اعتلى بشجاعةٍ","ذاع المعاني هيبة وحضورًا"],["ما دامَ للصوتِ الجهيرِ مهابةُ","ما كانَ للخطباءِ غيرَ جهيرًا"]];
 /* ===== النصوص: p("العربية","English") — عدّل النصين معًا. كل نص بين [ ] مؤقت ===== */
 const T=l=>{const p=(a,e)=>l=='ar'?a:e,n=x=>l=='ar'?String(x).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]):x;return{
  title:p("أكاديمية جَهير","Jaheer Academy"),
- nav:[p("الرئيسية","Home"),p("عن الأكاديمية","About"),p("ألوان الإلقاء","Speaking Colors"),p("ماراثون جَهير","Jaheer Marathon"),p("إنجازاتنا","Achievements"),p("معرض الصور","Gallery"),p("تواصل معنا","Contact")],
+ nav:[p("الرئيسية","Home"),p("عن الأكاديمية","About"),p("ألوان الإلقاء","Speaking Colors"),p("ماراثون جَهير","Jaheer Marathon"),p("تواصل معنا","Contact")],
  langBtn:p("English","العربية"),
  eyHero:p("أكاديمية للإلقاء والخطابة","Public speaking & oratory academy"),
  tg:p("للإلقاء والخطابة","for Public Speaking & Oratory"),
- intro:p("أكاديمية جَهير للإلقاء والخطابة أكاديمية تدريبية متخصصة، تهدف إلى تمكين الأفراد من مهارات التواصل الفعّال والثقة اللازمة للحديث بطلاقة وتقديم أفكارهم بوضوح وتأثير.","Jaheer Academy for Public Speaking & Oratory is a specialized training academy dedicated to empowering individuals with the skills and confidence to communicate effectively, speak fluently, and deliver their ideas with clarity and impact."),
  b1:p("رحلة جَهير","The Jaheer journey"),b2:p("ماراثون جَهير","Jaheer Marathon"),
  heroNote:p("[ضع صورة الغلاف هنا: مسرح أو ميكروفون أو جمهور — M.heroImage]","[Place the cover photo here: stage, microphone or audience — M.heroImage]"),
  stats:[["26",p("ورشة تدريبية","Training workshops"),p("ورش تدريبية تغطي مواضيع الإلقاء","Workshops covering public speaking topics")],["783,100",p("حرف منطوق","Letters spoken"),p("إجمالي الحروف المنطوقة في تدريب المشاركين","Total letters spoken during participants' training")],["2360",p("ساعة","Training hours"),p("14 ساعة تدريب لكل متدرب","14 training hours per trainee")],["160+",p("متدربًا","Trainees"),p("استفادوا من برامج جهير","Benefited from Jaheer programs")]],  // أرقام رسمية من إنفوجرافيك الأكاديمية
- eAbout:p("عن الأكاديمية","About the academy"),hAbout:p("من نحن","Who we are"),
- aboutParas:[p("منذ تأسيسها، دربت جَهير أكثر من 160 متدربًا عبر 26 ورشة تدريبية وأكثر من 2360 ساعة تدريبية، تناولت أشكالًا متنوعة من الإلقاء والتواصل، منها العروض الأكاديمية، والإلقاء الرسمي والاحتفالي، والتقديم الإخباري، والخطابة، والمناظرة.","Since its establishment, Jaheer has trained 160+ graduates through 26 workshops and more than 2,360 training hours, covering diverse forms of public speaking and communication, including academic presentations, ceremonial and formal speaking, news presentation, public speaking, and debate."),p("تجمع برامجنا بين التدريب العملي والممارسة المستمرة، لمساعدة المشاركين على تطوير إلقاء واثق، وتعبير مؤثر، وتفاعل مع الجمهور، ومهارات تواصل قوية تصلح في السياقات الأكاديمية والمهنية والاجتماعية.","Our programs combine practical training with continuous practice, helping participants develop confident delivery, effective expression, audience engagement, and strong communication skills applicable across academic, professional, and social settings."),p("نؤمن في جَهير بأن الإلقاء أكبر من الوقوف أمام الجمهور؛ إنه القدرة على صياغة الفكرة وإيصال الرسالة وصناعة أثر ذي معنى.","At Jaheer, we believe that public speaking is more than standing in front of an audience—it is the ability to shape an idea, deliver a message, and create meaningful impact."),p("ونواصل توسيع برامجنا وشراكاتنا وتجاربنا التعليمية برؤية تهدف إلى إسهام دائم في التواصل والتنمية الشخصية داخل مجتمعنا.","We continue to expand our programs, partnerships, and learning experiences with a vision to make a lasting contribution to communication and personal development within our community.")],
- aboutItems:[[p("من نحن","Who we are"),p("[نص رسمي]","[Official text]")],[p("رؤيتنا","Our vision"),p("[نص رسمي]","[Official text]")],[p("رسالتنا","Our mission"),p("[نص رسمي]","[Official text]")],[p("قيمنا","Our values"),p("[نص رسمي]","[Official text]")]],
+ eAbout:p("عن الأكاديمية","About the academy"),hAbout:p("عن جهير","About Jaheer"),
+ aboutLead:p("أكاديمية تدريبية تهدف إلى تطوير مهارات التواصل، فن الإقناع، وبناء الثقة بالنفس، من خلال التدريب العملي على مهارات الإلقاء والخطابة أمام الجمهور.","A training academy that aims to develop communication skills, the art of persuasion, and self-confidence, through practical training in public speaking and oratory before an audience."),
+ aboutItems:[[p("رسالتنا","Our mission"),p("نؤمن أن لكل شخص صوتًا داخليًا ورسالة تستحق أن تُسمع، يأتي دور \"جهير\" إلى تمكينه لتحويل هذا الصوت إلى أداء مؤثر وصدى يلامس الجمهور، مع العمل على تحويل رهبة الوقوف أمام الآخرين إلى تجربة تعزز الحضور والشخصية القيادية.","We believe every person has an inner voice and a message worth hearing. Jaheer’s role is to empower them to turn that voice into impactful delivery and an echo that touches the audience, while turning the fear of standing before others into an experience that strengthens presence and leadership.")],[p("رؤيتنا","Our vision"),p("بناء شخصيات قيادية قادرة على التعبير عن الأفكار بثقة ووضوح. صقل المهارات الإقناعية والارتجالية وصياغة الرسائل بوضوح وتأثير. التدريب على إعداد وإلقاء خطب قصيرة وفعالة أمام جمهور حقيقي.","Building leadership personalities capable of expressing ideas with confidence and clarity. Refining persuasive and impromptu skills and crafting messages with clarity and impact. Training to prepare and deliver short, effective speeches before a real audience.")]],
  aboutPh:p("[صورة تعبّر عن الأكاديمية]","[Photo representing the academy]"),
  eCol:p("ألوان الإلقاء","Speaking colors"),hCol:p("أربعة ألوان.. رحلة واحدة","Four colors. One journey."),
  colLead:p("أربع مراحل متدرجة في رحلة الإلقاء والتطوير.","Four progressive stages in the speaking and development journey."),
  // الأسماء الرسمية بالعربية؛ الإنجليزية ترجمة مؤقتة تحتاج اعتمادك
  colors:[["الإلقاء التجريبي","Experimental Delivery"],["لون المعلقات","The Mu'allaqat Color"],["اللون الإقناعي","The Persuasive Color"],["اللون الخطابي","The Oratory Color"]]
-  .map(([a,e],i)=>({ar:a,name:p(a,e),desc:i==3?p("هو أحد ألوان الإلقاء الأدبي الذي يركز على تقديم روائع الشعر العربي، من خلال إلقاء الأبيات الشعرية بأسلوب يعكس معانيها، ويُبرز جمال اللغة العربية وقوة التعبير فيها.","One of the literary delivery colors, focused on presenting masterpieces of Arabic poetry by reciting verses in a style that reflects their meaning and highlights the beauty of the Arabic language and the power of expression within it."):p("[وصف اللون]","[Color description]"),details:p("[تفاصيل اللون — اختيارية]","[Optional details]")})),
- stage:(i)=>p("المرحلة "+n(i)+" من "+n(4),"Stage "+i+" of 4"),details:p("التفاصيل","Details"),
+  .map(([a,e],i)=>({ar:a,name:p(a,e),desc:i==1?p("هو أحد ألوان الإلقاء الأدبي الذي يركز على تقديم روائع الشعر العربي، من خلال إلقاء الأبيات الشعرية بأسلوب يعكس معانيها، ويُبرز جمال اللغة العربية وقوة التعبير فيها.","One of the literary delivery colors, focused on presenting masterpieces of Arabic poetry by reciting verses in a style that reflects their meaning and highlights the beauty of the Arabic language and the power of expression within it."):p("[وصف اللون]","[Color description]")})),
+ stage:(i)=>p("المرحلة "+n(i)+" من "+n(4),"Stage "+i+" of 4"),
  colPh:name=>p("[صورة "+name+"]","[Photo: "+name+"]"),
  eMar:p("مبادرة الأكاديمية","An academy initiative"),hMar:p("ماراثون جَهير","Jaheer Marathon"),
  marIntro:p("عشرة متحدثين أتمّوا ألوان جَهير الأربعة، في طريقهم إلى المسرح الكبير.","Ten speakers who completed all four Jaheer colors, on their way to the grand stage."),
- s1:p("المتحدثون العشرة","The ten speakers"),s2:p("من وراء الكواليس","Behind the scenes"),s3:p("المسرح الكبير","The grand stage"),
+ s1:p("المتحدثون العشرة","The ten speakers"),
  speakers:Array.from({length:10},()=>({name:p("[الاسم]","[Name]"),degree:p("[الدرجة]","[Degree]")})),
- mgCap:i=>p("[صورة "+n(i)+"]","[Photo "+i+"]"),
- stageDetails:[p("[تاريخ الحدث]","[Event date]"),p("[مكان الحدث]","[Venue]"),p("[تفاصيل الحدث]","[Event details]")],
- stagePh:p("ضع صورة المسرح الكبير هنا","Place the grand stage photo here"),
- eAch:p("إنجازاتنا","Achievements"),hAch:p("مجتمع جَهير وإنجازاته","The Jaheer community"),
- achLead:p("[نبذة عن أنشطة الأكاديمية وفعالياتها]","[Overview of academy activities and events]"),
- ach:[["نشاط","Activity"],["فعالية","Event"],["تدريب","Training"],["إنجاز طلابي","Student achievement"],["شراكة","Partnership"],["محطة","Milestone"]].map(([a,e])=>[p(a,e),p("[العنوان]","[Title]"),p("[وصف]","[Description]")]),
- hPart:p("شركاء النجاح","Partners"),partPh:p("[شعار شريك]","[Partner logo]"),
- eGal:p("معرض الصور","Gallery"),hGal:p("لحظات من جَهير","Moments from Jaheer"),galCap:i=>p("[صورة أو فيديو "+n(i)+"]","[Photo or video "+i+"]"),
- ct1:p("[عبارة دعوة للتواصل]","[Call-to-action headline]"),ct2:p("[نص قصير يدعو للتواصل مع الأكاديمية]","[Short invitation to contact the academy]"),b3:p("تواصل معنا","Contact us"),
+ b3:p("تواصل معنا","Contact us"),
  f1:p("روابط سريعة","Quick links"),f2:p("تواصل معنا","Contact"),f3:p("تابعنا","Follow us"),
- contact:[p("[البريد الإلكتروني]","[Email]"),p("[رقم التواصل]","[Phone]"),p("[المدينة]","[City]")],
  logoPh:p("ضع شعار جَهير الرسمي هنا","Place the official Jaheer logo here"),
  cp:p("© أكاديمية جَهير. جميع الحقوق محفوظة.","© Jaheer Academy. All rights reserved.")
 }};
@@ -232,29 +214,25 @@ const T=l=>{const p=(a,e)=>l=='ar'?a:e,n=x=>l=='ar'?String(x).replace(/\d/g,d=>'
 const $=s=>document.querySelector(s),E=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const img=(s,alt,ph)=>s?`<img class="fit" src="${s}" alt="${alt}" loading="lazy">`:`<div class="ph" style="height:100%">${ph}</div>`;
 const media=(m,cap)=>m.src?(m.type=='video'?`<video class="fit" src="${m.src}" controls playsinline preload="none"></video>`:`<img class="fit" src="${m.src}" alt="${cap}" loading="lazy">`):`<div class="ph" style="height:100%">${cap}</div>`;
-const ids=["home","about","colors","marathon","achievements","gallery","contact"];
-const set=(o)=>Object.entries(o).forEach(([k,v])=>$(k).textContent=v);
+const ids=["home","about","colors","marathon","contact"];
+const set=(o)=>Object.entries(o).forEach(([k,v])=>{const e=$(k);if(e)e.textContent=v});
+const mail=()=>M.email?"mailto:"+M.email:"#contact";
 function render(l){const t=T(l),D=document.documentElement;D.lang=l;D.dir=l=='ar'?'rtl':'ltr';document.title=t.title;
  ['#nl','#fl','#sr','#ab','#jn','#pg','#mg','#ed','#ac','#pl','#gg','#ci','#so','#hv .hn'].forEach(s=>{const e=$(s);if(e){s=='#hv .hn'?e.remove():e.innerHTML=''}});
  set({'#nc':t.nav[3],'#lg':t.langBtn,'#eh':t.eyHero,'#h1':t.title,'#tg':t.tg,'#hi':t.intro,'#b1':t.b1,'#b2':t.b2,'#ea':t.eAbout,'#ha':t.hAbout,'#ec':t.eCol,'#hc':t.hCol,'#cl':t.colLead,'#em':t.eMar,'#hm':t.hMar,'#mi':t.marIntro,'#s1':t.s1,'#s2':t.s2,'#s3':t.s3,'#ee':t.eAch,'#he':t.hAch,'#ai':t.achLead,'#hp':t.hPart,'#eg':t.eGal,'#hg':t.hGal,'#ct1':t.ct1,'#ct2':t.ct2,'#b3':t.b3,'#f1':t.f1,'#f2':t.f2,'#f3':t.f3,'#cp':t.cp});
- $('#al').innerHTML=t.aboutParas.map(x=>`<p>${x}</p>`).join('');
+ $('#al').textContent=t.aboutLead;
  $('#brand').innerHTML=M.logo?`<img src="${M.logo}" alt="${t.title}">`:`<span>${t.title}</span>`;
  t.nav.forEach((x,i)=>{$('#nl').append(E('li','',`<a href="#${ids[i]}">${x}</a>`));$('#fl').append(E('li','',`<a href="#${ids[i]}">${x}</a>`))});
  ['#logo2'].forEach(id=>{const b=$(id);b.className='';b.innerHTML='';if(M.logo)b.innerHTML=`<img src="${M.logo}" alt="${t.title}">`;else{b.className='ph';b.textContent=t.logoPh}});
  const hv=$('#hv');hv.querySelectorAll('.bg').forEach(x=>x.remove());hv.hidden=!M.heroImage;$('.hero').classList.toggle('solo',!M.heroImage);
  if(M.heroImage)hv.insertAdjacentHTML('afterbegin',`<img class="fit bg" src="${M.heroImage}" alt="">`);
- const sl=SLOGAN.map(x=>`<p>${x}</p>`).join('');$('#sg1').innerHTML=sl;$('#sg2').innerHTML=sl;
+ const sl=SLOGAN.map(b=>`<div class="bt"><span>${b[0]}</span><span>${b[1]}</span></div>`).join('');$('#sg1').innerHTML=sl;$('#sg2').innerHTML=sl;
  t.stats.forEach(([a,b,c])=>$('#sr').append(E('div','',`<b>${a}</b><span>${b}</span><small>${c}</small>`)));
  t.aboutItems.forEach(([h,x])=>$('#ab').append(E('div','',`<h3>${h}</h3><p>${x}</p>`)));$('#ap').innerHTML=img(M.aboutPhoto,t.title,t.aboutPh);
  t.colors.forEach((c,i)=>{const a=E('article','cs');a.style.setProperty('--ac',M.accents[i]);
-  a.innerHTML=`<span class="nd">${l=='ar'?String(i+1).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]):i+1}</span><div class="im">${img(M.colorImages[i],c.name,t.colPh(c.name))}</div><span class="st">${t.stage(i+1)}</span><h3>${c.name}</h3>${l=='en'?`<span class="oa" lang="ar">${c.ar}</span>`:''}<p>${c.desc}</p><details><summary>${t.details}</summary><p>${c.details}</p></details>`;$('#jn').append(a)});
+  a.innerHTML=`<span class="nd">${l=='ar'?String(i+1).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]):i+1}</span><div class="im">${img(M.colorImages[i],c.name,t.colPh(c.name))}</div><span class="st">${t.stage(i+1)}</span><h3>${c.name}</h3>${l=='en'?`<span class="oa" lang="ar">${c.ar}</span>`:''}<p>${c.desc}</p>`;$('#jn').append(a)});
  t.speakers.forEach((s,i)=>$('#pg').append(E('article','pc',`<span class="no">${String(i+1).replace(/\d/g,d=>l=='ar'?'٠١٢٣٤٥٦٧٨٩'[d]:d)}</span><h4>${s.name}</h4><p>${s.degree}</p>`)));
- M.marathonGallery.forEach((m,i)=>$('#mg').append(E('div','',media(m,t.mgCap(i+1)))));
- $('#eb').innerHTML=img(M.stagePhoto,t.s3,t.stagePh);$('#ed').innerHTML=t.stageDetails.map(x=>`<div class="ph">${x}</div>`).join('');
- t.ach.forEach(([a,h,x])=>$('#ac').append(E('article','',`<small>${a}</small><h3>${h}</h3><p>${x}</p>`)));
- M.partnerLogos.forEach(s=>$('#pl').append(E('div','',s?`<img src="${s}" alt="" loading="lazy">`:`<span class="ph" style="border:0;background:none">${t.partPh}</span>`)));
- M.gallery.forEach((m,i)=>$('#gg').append(E('figure','gi',media(m,t.galCap(i+1)))));
- t.contact.forEach(x=>$('#ci').append(E('div','ph',x)));
+ $('#ci').innerHTML=`<a class="btn" href="${mail()}">${t.b3}</a>`;$('#b3').href=mail();
  M.social.forEach(s=>$('#so').append(E('li','',`<a href="${s.url}" target="_blank" rel="noopener">${s[l]}</a>`)));
  $('#nav').classList.remove('open');try{localStorage.setItem('jl',l)}catch(e){}}
 let L='ar';try{L=localStorage.getItem('jl')||'ar'}catch(e){}
